@@ -38,10 +38,15 @@ import { ListCurrenciesRequest } from './ListCurrencies/ListCurrenciesRequest'
 import { ListCurrenciesResponse } from './ListCurrencies/ListCurrenciesResponse'
 import { EstimateConversionRequest } from './EstimateConversion/EstimateConversionRequest'
 import { EstimateConversionResponse } from './EstimateConversion/EstimateConversionResponse'
+import {GetMemPoolRequest} from './GetRawMempool/GetMempoolRequest'
+import {GetMempoolResponse} from './GetRawMempool/GetMempoolResponse'
+import { type } from 'os'
 
 export {
   GetAddressBalanceRequest,
   GetAddressBalanceResponse,
+  GetMemPoolRequest,
+  GetMempoolResponse,
   GetAddressDeltasRequest,
   GetAddressDeltasResponse,
   GetAddressMempoolRequest,
@@ -84,6 +89,7 @@ export {
 
 export type RpcRequest =
   | typeof MakeOfferRequest
+  |  typeof GetMemPoolRequest
   | typeof GetOffersRequest
   | typeof GetAddressBalanceRequest
   | typeof GetAddressDeltasRequest
@@ -106,6 +112,7 @@ export type RpcRequest =
 
 export type RpcResponse =
   | typeof MakeOfferResponse
+  | typeof GetMempoolResponse
   | typeof GetOffersResponse
   | typeof GetAddressBalanceResponse
   | typeof GetAddressDeltasResponse
